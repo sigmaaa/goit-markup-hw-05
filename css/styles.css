@@ -562,7 +562,7 @@ section {
     align-items: center;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 250ms ease-in-out;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-overlay.is-open {
@@ -571,20 +571,26 @@ section {
 }
 
 .modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: rgba(252, 252, 252, 1);
-    box-shadow: 0px 2px 1px 0px rgba(var(--cl-black), 0.2), 0px 1px 3px 0px rgba(var(--cl-black), 0.12), 0px 1px 1px 0px rgba(var(--cl-black), 0.14);
-    border-radius: 4px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);     border-radius: 4px;
     padding: 72px 24px 24px 24px;
     width: 408px;
     min-height: 584px;
     overflow-y: auto;
-    position: relative;
 }
+
 .modal-close-icon {
     fill: currentColor;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-btn {
+    cursor: pointer;
     position: absolute;
     top: 24px;
     right: 24px;
@@ -593,13 +599,17 @@ section {
     align-items: center;
     width: 24px;
     height: 24px;
+    padding: 0;
     border-radius: 50%;
     background-color: rgba(231, 233, 252, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1); 
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
-.modal-close-btn:hover {
+.modal-close-btn:hover,
+.modal-close-btn:focus {
     background-color: #404BBF;
     color: #fff;
+    border: none; 
 }
 
 .modal-title {
@@ -621,26 +631,36 @@ section {
     font-size: 12px;
     color: #8E8F99;
     margin-bottom: 4px;
+    line-height: 1.17;
+    letter-spacing: 0.04em; 
 }
 .contact-form-field {
     position: relative;
     margin-bottom: 8px;
 }
 
+/* .contact-form-input-box {
+    position: relative;
+} */
+
 .contact-form-input {
     width: 100%;
+    height: 40px;
     border-radius: 4px;
     border: 1px solid rgba(46, 47, 66, 0.4);
     outline: transparent;
     padding: 14px 19px 14px 38px;
     background-color: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
 .icon-input {
     position: absolute;
-    left: 19px;
-    top: 45%;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
     fill: #2E2F42;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
 .contact-form-input:focus,
@@ -670,7 +690,7 @@ section {
     color: #8E8F99;  
 }
 .checkbox-field {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
 }
 .hidden-checkbox {
     position: absolute;
