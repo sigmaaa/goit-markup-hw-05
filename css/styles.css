@@ -685,6 +685,9 @@ section {
     overflow-y: auto;
     color: rgba(46, 47, 66, 0.4);
 }
+.textarea-field {
+    margin-bottom: 16px;
+}
 
 .contact-form-textarea::placeholder {
     font-size: 12px;
@@ -695,7 +698,7 @@ section {
 }
 
 .checkbox-field {
-    margin-bottom: 16px;
+    margin-bottom: 24px;
 }
 
 .hidden-checkbox {
