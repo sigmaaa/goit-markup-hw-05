@@ -693,8 +693,9 @@ section {
     letter-spacing: 0.04em;
     color: #8E8F99;  
 }
+
 .checkbox-field {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
 }
 
 .hidden-checkbox {
@@ -747,6 +748,7 @@ section {
 .checkbox-input:checked + .privacy-policy-label .custom-checkbox {
     background-color: #404BBF;
     border: none;
+    fill: #F4F4FD;
 }
 
 .privacy-policy-link {
